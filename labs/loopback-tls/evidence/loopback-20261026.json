@@ -1,0 +1,391 @@
+{
+  "started_at_utc": "2026-10-26T19:29:30.978770+00:00",
+  "scope": "actual TCP/TLS/HTTP on IPv4 loopback; synthetic CA, service and responses",
+  "python_version": "3.14.7",
+  "os": "Windows",
+  "python_openssl": "OpenSSL 3.5.7 9 Jun 2026",
+  "checks": [
+    {
+      "name": "openssl_verifies_issued_leaf_and_hostname",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "TLSv1_2_bound_to_loopback",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "TLSv1_2_tcp_reachable",
+      "passed": true,
+      "detail": {
+        "success": true,
+        "host": "127.0.0.1",
+        "port": 3206
+      }
+    },
+    {
+      "name": "TLSv1_2_untrusted_ca_rejected",
+      "passed": true,
+      "detail": {
+        "success": false,
+        "host": "127.0.0.1",
+        "port": 3206,
+        "error": "[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1082)",
+        "error_type": "SSLCertVerificationError"
+      }
+    },
+    {
+      "name": "TLSv1_2_trusted_name_succeeds",
+      "passed": true,
+      "detail": {
+        "success": true,
+        "host": "127.0.0.1",
+        "port": 3206,
+        "tls_version": "TLSv1.2",
+        "cipher": "ECDHE-RSA-AES256-GCM-SHA384",
+        "certificate": {
+          "subject": [
+            [
+              [
+                "commonName",
+                "atlas-loopback.invalid"
+              ]
+            ]
+          ],
+          "issuer": [
+            [
+              [
+                "commonName",
+                "ATLAS Synthetic Lab CA"
+              ]
+            ]
+          ],
+          "version": 3,
+          "serialNumber": "5CAC428B0F73884BA59DB2BBD1B068B5B2424812",
+          "notBefore": "Oct 26 19:29:31 2026 GMT",
+          "notAfter": "Oct 27 19:29:31 2026 GMT",
+          "subjectAltName": [
+            [
+              "DNS",
+              "atlas-loopback.invalid"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "name": "TLSv1_2_negotiated_expected_protocol",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "TLSv1_2_certificate_san_present",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "TLSv1_2_wrong_name_rejected",
+      "passed": true,
+      "detail": {
+        "success": false,
+        "host": "127.0.0.1",
+        "port": 3206,
+        "error": "[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'wrong.invalid'. (_ssl.c:1082)",
+        "error_type": "SSLCertVerificationError"
+      }
+    },
+    {
+      "name": "TLSv1_2_health_200",
+      "passed": true,
+      "detail": {
+        "status": 200,
+        "body": {
+          "service": "atlas-synthetic-loopback",
+          "status": 200
+        },
+        "tls_version": "TLSv1.2"
+      }
+    },
+    {
+      "name": "TLSv1_2_missing_404",
+      "passed": true,
+      "detail": {
+        "status": 404,
+        "body": {
+          "service": "atlas-synthetic-loopback",
+          "status": 404
+        },
+        "tls_version": "TLSv1.2"
+      }
+    },
+    {
+      "name": "TLSv1_3_bound_to_loopback",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "TLSv1_3_tcp_reachable",
+      "passed": true,
+      "detail": {
+        "success": true,
+        "host": "127.0.0.1",
+        "port": 3213
+      }
+    },
+    {
+      "name": "TLSv1_3_untrusted_ca_rejected",
+      "passed": true,
+      "detail": {
+        "success": false,
+        "host": "127.0.0.1",
+        "port": 3213,
+        "error": "[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1082)",
+        "error_type": "SSLCertVerificationError"
+      }
+    },
+    {
+      "name": "TLSv1_3_trusted_name_succeeds",
+      "passed": true,
+      "detail": {
+        "success": true,
+        "host": "127.0.0.1",
+        "port": 3213,
+        "tls_version": "TLSv1.3",
+        "cipher": "TLS_AES_256_GCM_SHA384",
+        "certificate": {
+          "subject": [
+            [
+              [
+                "commonName",
+                "atlas-loopback.invalid"
+              ]
+            ]
+          ],
+          "issuer": [
+            [
+              [
+                "commonName",
+                "ATLAS Synthetic Lab CA"
+              ]
+            ]
+          ],
+          "version": 3,
+          "serialNumber": "5CAC428B0F73884BA59DB2BBD1B068B5B2424812",
+          "notBefore": "Oct 26 19:29:31 2026 GMT",
+          "notAfter": "Oct 27 19:29:31 2026 GMT",
+          "subjectAltName": [
+            [
+              "DNS",
+              "atlas-loopback.invalid"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "name": "TLSv1_3_negotiated_expected_protocol",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "TLSv1_3_certificate_san_present",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "TLSv1_3_wrong_name_rejected",
+      "passed": true,
+      "detail": {
+        "success": false,
+        "host": "127.0.0.1",
+        "port": 3213,
+        "error": "[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'wrong.invalid'. (_ssl.c:1082)",
+        "error_type": "SSLCertVerificationError"
+      }
+    },
+    {
+      "name": "TLSv1_3_health_200",
+      "passed": true,
+      "detail": {
+        "status": 200,
+        "body": {
+          "service": "atlas-synthetic-loopback",
+          "status": 200
+        },
+        "tls_version": "TLSv1.3"
+      }
+    },
+    {
+      "name": "TLSv1_3_missing_404",
+      "passed": true,
+      "detail": {
+        "status": 404,
+        "body": {
+          "service": "atlas-synthetic-loopback",
+          "status": 404
+        },
+        "tls_version": "TLSv1.3"
+      }
+    },
+    {
+      "name": "tls12_client_rejected_by_tls13_only_server",
+      "passed": true,
+      "detail": {
+        "type": "SSLError",
+        "reason": "TLSV1_ALERT_PROTOCOL_VERSION"
+      }
+    },
+    {
+      "name": "TLSv1_2_server_thread_stopped",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "TLSv1_2_listener_closed",
+      "passed": true,
+      "detail": {
+        "refused": true,
+        "error_type": "ConnectionRefusedError"
+      }
+    },
+    {
+      "name": "TLSv1_2_server_observed_expected_requests",
+      "passed": true,
+      "detail": [
+        {
+          "peer": "127.0.0.1",
+          "path": "/health",
+          "status": 200,
+          "tls_version": "TLSv1.2"
+        },
+        {
+          "peer": "127.0.0.1",
+          "path": "/missing",
+          "status": 404,
+          "tls_version": "TLSv1.2"
+        }
+      ]
+    },
+    {
+      "name": "TLSv1_2_no_unexpected_handler_errors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "TLSv1_3_server_thread_stopped",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "TLSv1_3_listener_closed",
+      "passed": true,
+      "detail": {
+        "refused": true,
+        "error_type": "ConnectionRefusedError"
+      }
+    },
+    {
+      "name": "TLSv1_3_server_observed_expected_requests",
+      "passed": true,
+      "detail": [
+        {
+          "peer": "127.0.0.1",
+          "path": "/health",
+          "status": 200,
+          "tls_version": "TLSv1.3"
+        },
+        {
+          "peer": "127.0.0.1",
+          "path": "/missing",
+          "status": 404,
+          "tls_version": "TLSv1.3"
+        }
+      ]
+    },
+    {
+      "name": "TLSv1_3_no_unexpected_handler_errors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "temporary_keys_and_certificates_removed",
+      "passed": true,
+      "detail": null
+    }
+  ],
+  "endpoints": [
+    {
+      "name": "TLSv1_2",
+      "address": "127.0.0.1",
+      "port": 3206
+    },
+    {
+      "name": "TLSv1_3",
+      "address": "127.0.0.1",
+      "port": 3213
+    }
+  ],
+  "limitations": [
+    "No packet capture or Wireshark analysis",
+    "No DNS server, VLAN, routing, firewall or pfSense validation",
+    "No production service or enterprise PKI",
+    "No remote endpoints or cloud resources"
+  ],
+  "source_sha256": {
+    "labs/loopback-tls/run_lab.py": "b650b8b477d69296dc157a5599057b29917e6796f0d5a59691aa520532aeaec9",
+    "src/netdiag/https.py": "56c6bb133056b38fbe96572c52e363a79e23d19a116a5bfa0c6d697bce610954",
+    "src/netdiag/tcp.py": "537b3d9aa8fb9738eba64a41b1fd91a9948fc46bc2c3e414eb36488504c9231c"
+  },
+  "openssl_cli": "OpenSSL 3.5.7 9 Jun 2026 (Library: OpenSSL 3.5.7 9 Jun 2026)",
+  "certificate_sha256": {
+    "ca_pem": "75a8ba7711507c4c02f848fdb8e28d565d205c07dfe04e1018451d456d025abd",
+    "server_pem": "dac50a889709129c68efdab1113e1070cabe0f0ce828c1e9d28476cb3c95ab1b"
+  },
+  "server_handshake_errors": {
+    "TLSv1_2": [
+      {
+        "type": "SSLEOFError",
+        "reason": "UNEXPECTED_EOF_WHILE_READING"
+      },
+      {
+        "type": "SSLError",
+        "reason": "TLSV1_ALERT_UNKNOWN_CA"
+      },
+      {
+        "type": "SSLError",
+        "reason": "SSLV3_ALERT_BAD_CERTIFICATE"
+      }
+    ],
+    "TLSv1_3": [
+      {
+        "type": "SSLEOFError",
+        "reason": "UNEXPECTED_EOF_WHILE_READING"
+      },
+      {
+        "type": "SSLError",
+        "reason": "TLSV1_ALERT_UNKNOWN_CA"
+      },
+      {
+        "type": "ConnectionAbortedError",
+        "reason": null
+      },
+      {
+        "type": "SSLError",
+        "reason": "SSLV3_ALERT_BAD_CERTIFICATE"
+      },
+      {
+        "type": "SSLError",
+        "reason": "UNSUPPORTED_PROTOCOL"
+      }
+    ]
+  },
+  "tls_probe_connection_resets": {
+    "TLSv1_2": 0,
+    "TLSv1_3": 0
+  },
+  "finished_at_utc": "2026-10-26T19:29:35.443537+00:00",
+  "passed": 29,
+  "failed": 0,
+  "success": true
+}

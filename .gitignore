@@ -5,3 +5,8 @@ __pycache__/
 .env
 
 *.egg-info/
+
+# Local test dependencies, temporary certificates and repeat-run reports.
+.test-deps/
+labs/loopback-tls/reports/
+*.key

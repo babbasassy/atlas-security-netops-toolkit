@@ -10,6 +10,8 @@ The project was built as a practical cybersecurity and IT portfolio project to d
 
 ## Features
 
+**26 October 2026 extension:** [Local TCP/TLS/HTTP lab](labs/loopback-tls/README.md) with real loopback connections, synthetic certificates, 29 passed integration checks and 11 passed regression tests. No VM or cloud service is required. The lab documents certificate trust/name failures, protocol mismatch and cleanup; it does not claim packet capture or firewall segmentation.
+
 ATLAS currently provides:
 
 - DNS resolution
@@ -374,11 +376,13 @@ The current automated tests cover:
 - TCP failure handling
 - SSH authentication log analysis
 
-Current result:
+Original five-test result (shown in the historical screenshot):
 
 ```text
 5 passed
 ```
+
+The expanded suite on 26 October 2026 passed **11 tests**, including six new TLS API checks. The [local TLS lab](labs/loopback-tls/README.md) also records **29 separate integration checks** using real loopback traffic and synthetic inputs.
 
 External network operations are mocked where appropriate so unit tests do not depend on public internet availability.
 
